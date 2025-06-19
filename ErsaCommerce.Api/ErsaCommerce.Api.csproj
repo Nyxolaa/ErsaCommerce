@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -24,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ErsaCommerce.Application\ErsaCommerce.Application.csproj" />
     <ProjectReference Include="..\ErsaCommerce.Data\ErsaCommerce.Data.csproj" />
+    <ProjectReference Include="..\ErsaCommerce.Shared\ErsaCommerce.Shared.csproj" />
   </ItemGroup>
 
 </Project>

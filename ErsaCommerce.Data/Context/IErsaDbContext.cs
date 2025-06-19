@@ -10,5 +10,8 @@ namespace ErsaCommerce.Data
         DbSet<Order> Orders{ get; set; }
         DbSet<OrderItem> OrderItems { get; set; }
         DbSet<Product> Products { get; set; }
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+        public int SaveChanges();
     }
 }

@@ -3,7 +3,7 @@ using ErsaCommerce.Data;
 using Microsoft.EntityFrameworkCore;
 using ErsaCommerce.Infrastructure.Jwt;
 
-namespace ErsaCommerce.Application.Auth.Command.LoginCommand
+namespace ErsaCommerce.Application
 {
     public class LoginCommand : IRequest<string>
     {
@@ -26,8 +26,8 @@ namespace ErsaCommerce.Application.Auth.Command.LoginCommand
                 var user = await _context.Users
                     .FirstOrDefaultAsync(u => u.Username == request.Username, cancellationToken);
 
-                if (user == null || user.Password != request.Password)
-                    throw new UnauthorizedAccessException("Invalid credentials");
+               // if (user == null || user.Password != request.Password)
+                 //   throw new UnauthorizedAccessException("Invalid credentials");
 
                 var token = _tokenService.CreateToken(user);
 

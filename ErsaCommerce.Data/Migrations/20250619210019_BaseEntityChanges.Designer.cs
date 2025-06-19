@@ -4,6 +4,7 @@ using ErsaCommerce.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ErsaCommerce.Data.Migrations
 {
     [DbContext(typeof(ErsaDbContext))]
-    partial class ErsaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250619210019_BaseEntityChanges")]
+    partial class BaseEntityChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

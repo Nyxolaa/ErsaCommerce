@@ -1,4 +1,6 @@
+using ErsaCommerce.Application;
 using ErsaCommerce.Data;
+using ErsaCommerce.Infrastructure.Jwt;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -8,13 +10,14 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IErsaDbContext, ErsaDbContext>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddControllers();
-builder.Services.AddMediatR(typeof(Program));
+DependencyInjection.AddApplication(builder.Services);
 
 builder.Services.AddDbContext<ErsaDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

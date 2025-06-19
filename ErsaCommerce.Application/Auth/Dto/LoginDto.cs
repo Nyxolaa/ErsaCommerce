@@ -1,4 +1,4 @@
-﻿namespace ErsaCommerce.Application.Auth.Dto
+﻿namespace ErsaCommerce.Application
 {
     public class LoginDto
     {

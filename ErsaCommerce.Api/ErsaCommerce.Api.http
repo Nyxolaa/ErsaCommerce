@@ -1,0 +1,6 @@
+@ErsaCommerce.Api_HostAddress = http://localhost:5230
+
+GET {{ErsaCommerce.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

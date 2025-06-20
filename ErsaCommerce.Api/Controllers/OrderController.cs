@@ -52,7 +52,7 @@ namespace ErsaCommerce.Api
             return Ok(result);
         }
 
-        // siparis durumu guncelleme //UpdateOrderStatusCommand
+        // siparis durumu guncelleme
         [HttpPut("update-order-status")]
         public async Task<IActionResult> UpdateOrderStatus([FromBody] UpdateOrderStatusCommand request)
         {

@@ -1,9 +1,11 @@
 ﻿using ErsaCommerce.Application;
 using ErsaCommerce.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ErsaCommerce.Api
 {
+    [AllowAnonymous]
     public class AuthController : BaseController
     {
         [HttpPost("register")]

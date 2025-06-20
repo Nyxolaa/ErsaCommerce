@@ -65,7 +65,7 @@ namespace ErsaCommerce.Data
             return base.SaveChanges();
         }
 
-        public Task<int> SaveChangesAsync(long createdBy, CancellationToken cancellationToken)
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())
             {
@@ -73,17 +73,17 @@ namespace ErsaCommerce.Data
                 {
                     case EntityState.Added:
                         entry.Entity.Unique = entry.Entity.Unique != Guid.Empty ? entry.Entity.Unique : Guid.NewGuid();
-                        entry.Entity.CreatedBy = createdBy;
+                        entry.Entity.CreatedBy = 0;
                         entry.Entity.CreatedAt = DateTime.UtcNow;
                         entry.Entity.IsActive = true;
                         break;
                     case EntityState.Modified:
-                        entry.Entity.UpdatedBy = createdBy;
+                        entry.Entity.UpdatedBy = 0;
                         entry.Entity.UpdatedAt = DateTime.UtcNow;
                         break;
                     case EntityState.Deleted:
                         entry.State = EntityState.Modified;
-                        entry.Entity.DeletedBy = createdBy;
+                        entry.Entity.DeletedBy = 0;
                         entry.Entity.DeletedAt = DateTime.UtcNow;
                         entry.Entity.IsActive = false;
                         break;

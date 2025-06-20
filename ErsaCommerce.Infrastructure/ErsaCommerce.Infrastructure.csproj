@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ErsaCommerce.Data\ErsaCommerce.Data.csproj" />
     <ProjectReference Include="..\ErsaCommerce.Domain\ErsaCommerce.Domain.csproj" />
   </ItemGroup>
 

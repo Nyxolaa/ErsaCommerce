@@ -9,8 +9,7 @@ namespace ErsaCommerce.Application
     {
         public string FullName { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public string PhoneNumber { get; set; } = null!;
-        public string Address { get; set; } = null!;
+        public string Address { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, Response<CustomerDto>>
@@ -28,6 +27,7 @@ namespace ErsaCommerce.Application
                 {
                     FullName = request.FullName,
                     Email = request.Email,
+                    Address = request.Address,
                     CreatedAt = request.CreatedAt
                 };
 
@@ -38,7 +38,8 @@ namespace ErsaCommerce.Application
                 {
                     Id = customer.Id,
                     FullName = customer.FullName,
-                    Email = customer.Email
+                    Email = customer.Email,
+                    Address = customer.Address
                 };
 
                 return Response<CustomerDto>.Success(customerDto);

@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Product\**" />
+    <Compile Remove="User\Query\**" />
+    <EmbeddedResource Remove="Product\**" />
+    <EmbeddedResource Remove="User\Query\**" />
+    <None Remove="Product\**" />
+    <None Remove="User\Query\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
@@ -16,14 +25,6 @@
     <ProjectReference Include="..\ErsaCommerce.Data\ErsaCommerce.Data.csproj" />
     <ProjectReference Include="..\ErsaCommerce.Infrastructure\ErsaCommerce.Infrastructure.csproj" />
     <ProjectReference Include="..\ErsaCommerce.Shared\ErsaCommerce.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Order\Dto\" />
-    <Folder Include="Product\Command\" />
-    <Folder Include="Product\Dto\" />
-    <Folder Include="Product\Query\" />
-    <Folder Include="User\Query\" />
   </ItemGroup>
 
 </Project>

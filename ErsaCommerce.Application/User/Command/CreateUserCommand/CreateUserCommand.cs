@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ErsaCommerce.Application
 {
-    public class CreateUserCommand : IRequest<long> // Kullanıcı ID'si dönecek
+    public class CreateUserCommand : IRequest<long> // kullanici id'si donecek
     {
         public string Username { get; set; } = null!;
         public string Password { get; set; } = null!;

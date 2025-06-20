@@ -15,6 +15,15 @@
   <ItemGroup>
     <ProjectReference Include="..\ErsaCommerce.Data\ErsaCommerce.Data.csproj" />
     <ProjectReference Include="..\ErsaCommerce.Infrastructure\ErsaCommerce.Infrastructure.csproj" />
+    <ProjectReference Include="..\ErsaCommerce.Shared\ErsaCommerce.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Order\Dto\" />
+    <Folder Include="Product\Command\" />
+    <Folder Include="Product\Dto\" />
+    <Folder Include="Product\Query\" />
+    <Folder Include="User\Query\" />
   </ItemGroup>
 
 </Project>

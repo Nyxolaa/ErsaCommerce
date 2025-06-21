@@ -61,5 +61,17 @@ namespace ErsaCommerce.Api
                 return BadRequest(response);
             return Ok(response);
         }
+
+        // STORED PROCEDURE ILE belirli bir musterinin tum siparislerini listeleme
+        [HttpGet("sp-list-order-by-customers")]
+        public async Task<IActionResult> ListOrderByCustomerWithSP([FromQuery] GetOrdersByCustomerSP request)
+        {
+            var result = await Mediator.Send(request);
+
+            if (result == null)
+                return NotFound(result);
+
+            return Ok(result);
+        }
     }
 }

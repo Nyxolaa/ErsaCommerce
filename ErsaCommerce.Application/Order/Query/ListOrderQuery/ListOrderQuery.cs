@@ -25,10 +25,7 @@ namespace ErsaCommerce.Application
                         OrderDate = o.OrderDate,
                         ItemCount = o.OrderItems.Count,
                         Status = o.OrderStatus,
-                        TotalAmount = o.TotalAmount,
-                        CustomerId = o.CustomerId,
-                        CustomerName = o.Customer.FullName,
-                        CustomerEmail = o.Customer.Email
+                        TotalAmount = o.TotalAmount
                     })
                     .ToListAsync(cancellationToken);
 

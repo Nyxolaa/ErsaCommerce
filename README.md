@@ -62,15 +62,12 @@ POST /api/auth/login
 | ----- | --------------------------                   | ---------------------------------- |
 | POST  | /api/auth/register                           | Kullanıcı kaydı                    |
 | POST  | /api/auth/login                              | Giriş ve token alma                |
-
 | GET   | /api/customer/list-customer                  | Müşteri listeleme                  |
 | POST  | /api/customer/create-customer                | Müşteri ekleme                     |
-
 | POST  | /api/order/create-order                      | Sipariş oluşturma                  |
 | GET   | /api/order/get-order-detail                  | Sipariş detaylarını getirme        |
 | GET   | /api/customer/list-order-by-customers        | Müşterinin siparişlerini listeleme |
 | PUT   | /api/order/update-order-status               | Sipariş durumunu güncelleme        |
-
 | GET   | /api/customer/sp-list-order-by-customers     | Stored Procedure ile listeleme     |
 
 

@@ -68,7 +68,7 @@ POST /api/auth/login
 | GET   | /api/order/get-order-detail                  | Sipariş detaylarını getirme        |
 | GET   | /api/customer/list-order-by-customers        | Müşterinin siparişlerini listeleme |
 | PUT   | /api/order/update-order-status               | Sipariş durumunu güncelleme        |
-| GET   | /api/customer/sp-list-order-by-customers     | Stored Procedure ile listeleme     |
+| GET   | /api/customer/sp-list-order-by-customers     | Stored Procedure ile müşterinin siparişlerini listeleme |
 
 
 ---
@@ -84,7 +84,7 @@ POST /api/auth/login
 ### ⚙️ Projeyi Çalıştırma
 
 1. **Veritabanı ayarlarını yap** → `appsettings.json`
-2. **Migration ve DB oluştur:**
-3. **Projeyi başlat:**
+2. **Migration ve DB oluştur**
+3. **Projeyi başlat**
 
 ---

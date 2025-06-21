@@ -1,4 +1,5 @@
 using ErsaCommerce.Api;
+using ErsaCommerce.Api.Middlewares;
 using ErsaCommerce.Application;
 using ErsaCommerce.Data;
 using ErsaCommerce.Infrastructure;
@@ -52,6 +53,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

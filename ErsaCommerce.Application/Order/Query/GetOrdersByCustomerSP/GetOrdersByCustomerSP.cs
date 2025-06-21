@@ -22,6 +22,10 @@ namespace ErsaCommerce.Application
 
             public async Task<Response<List<GetOrderDto>>> Handle(GetOrdersByCustomerSP request, CancellationToken cancellationToken)
             {
+                var isCustomerExist = await _context.Customers.AnyAsync(c => c.Id == request.CustomerId);
+                if (!isCustomerExist)
+                    return Response<List<GetOrderDto>>.Failure(["Müşteri bulunamadı."]);
+
                 var result = new List<GetOrderDto>();
                 var dbContext = _context as DbContext;
 
@@ -52,6 +56,9 @@ namespace ErsaCommerce.Application
                         }
                     }
                 }
+
+                if (result == null || result.Count == 0)
+                    return Response<List<GetOrderDto>>.Failure(["Sipariş bulunamadı."] );
 
                 return Response<List<GetOrderDto>>.Success(result);
             }

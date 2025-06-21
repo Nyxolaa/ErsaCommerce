@@ -18,14 +18,14 @@ namespace ErsaCommerce.Application
             public async Task<Response<List<CustomerDto>>> Handle(ListCustomerQuery request, CancellationToken cancellationToken)
             {
                 var customers = await _context.Customers
-                    .Where(c => c.DeletedAt == null)
-                    .Select(c => new CustomerDto
-                    {
-                        Id = c.Id,
-                        FullName = c.FullName,
-                        Email = c.Email
-                    })
-                    .ToListAsync(cancellationToken);
+               .Where(c => c.DeletedAt == null)
+               .Select(c => new CustomerDto
+               {
+                   Id = c.Id,
+                   FullName = c.FullName,
+                   Email = c.Email
+               })
+               .ToListAsync(cancellationToken);
 
                 return Response<List<CustomerDto>>.Success(customers);
             }

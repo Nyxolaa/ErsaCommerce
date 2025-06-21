@@ -2,6 +2,8 @@
 using ErsaCommerce.Data;
 using Microsoft.EntityFrameworkCore;
 using ErsaCommerce.Infrastructure.Jwt;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace ErsaCommerce.Application
 {
@@ -26,8 +28,10 @@ namespace ErsaCommerce.Application
                 var user = await _context.Users
                     .FirstOrDefaultAsync(u => u.Username == request.Username, cancellationToken);
 
-               // if (user == null || user.Password != request.Password)
-                 //   throw new UnauthorizedAccessException("Invalid credentials");
+                var hashedPassword = Convert.ToBase64String(SHA256.HashData(Encoding.UTF8.GetBytes(request.Password)));
+
+                if (user == null || user.Password != hashedPassword)
+                    throw new UnauthorizedAccessException("Invalid credentials");
 
                 var token = _tokenService.CreateToken(user);
 
